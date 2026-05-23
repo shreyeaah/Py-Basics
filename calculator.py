@@ -1,4 +1,4 @@
-
+import math
 def add(a, b):
     result = a + b
     return result
@@ -23,8 +23,17 @@ while True:
     print("exiting the calculator...")
     break
 
-  num1 = int(input("enter the first number: "))
-  num2 = int(input("enter the second number: "))
+  try:
+    num1 = float(input("enter the first number: "))
+    num2 = float(input("enter the second number: "))
+    if math.isnan(num1) or math.isnan(num2) or math.isinf(num1) or math.isinf(num2):
+        raise ValueError("input cannot be NaN or infinity.")
+  except ValueError:
+    print("invalid input. please enter valid numbers.")
+    continue
+  except Exception as e:
+    print(f"an error occurred: {e}")
+    continue
 
   if switch == '1':
     print(add(num1, num2))
