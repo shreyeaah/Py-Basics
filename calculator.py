@@ -1,23 +1,29 @@
 import math
+
 def add(a, b):
     return a + b
     
 def subtract(a, b):
     return a - b
+
 def multiply(a, b):
     return a * b
+
 def divide(a, b):
     if b == 0:
         return "division by zero is not allowed"
     else:
         return a / b
+    
 def modulo(a, b):
     if b == 0:
         return "modulo by zero is not allowed"
     else:
         return a % b
+    
 def exponentiate(a, b):
     return a ** b
+
 def square_root(a):
     if a < 0:
         return "square root of a negative number is not defined"
@@ -44,6 +50,8 @@ while True:
         result = square_root(num1)
         history.append(f"sqrt({num1}) = {result}")
         print(result)
+        with open("history.txt", "a") as file:
+           file.write(f"sqrt({num1}) = {result}\n")
         
   elif switch in ['1', '2', '3', '4', '5', '6']:
 
@@ -63,30 +71,42 @@ while True:
       result = add(num1, num2)
       history.append(f"{num1} + {num2} = {result}")
       print(result)
+      with open("history.txt", "a") as file:
+         file.write(f"{num1} + {num2} = {result}\n")
 
     elif switch == '2':
       result = subtract(num1, num2)
       history.append(f"{num1} - {num2} = {result}")
       print(result)
+      with open("history.txt", "a") as file:
+         file.write(f"{num1} - {num2} = {result}\n")
 
     elif switch == '3':
       result = multiply(num1, num2)
       history.append(f"{num1} * {num2} = {result}")
       print(result)
+      with open("history.txt", "a") as file:
+         file.write(f"{num1} * {num2} = {result}\n")
 
     elif switch == '4':
       result = divide(num1, num2)
       history.append(f"{num1} / {num2} = {result}")
+      with open("history.txt", "a") as file:
+          file.write(f"{num1} / {num2} = {result}\n")
       print(result)
 
     elif switch == '5':
       result = modulo(num1, num2)
       history.append(f"{num1} % {num2} = {result}")
+      with open("history.txt", "a") as file:
+          file.write(f"{num1} % {num2} = {result}\n")
       print(result)
 
     elif switch == '6':
       result = exponentiate(num1, num2)
       history.append(f"{num1} ** {num2} = {result}")
+      with open("history.txt", "a") as file:
+          file.write(f"{num1} ** {num2} = {result}\n")
       print(result)
 
   elif switch == '9':
