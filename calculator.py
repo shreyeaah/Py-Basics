@@ -14,19 +14,27 @@ def divide(a, b):
     else:
         return a / b
 
-num1 = int(input("enter the first number: "))
-num2 = int(input("enter the second number: "))
-print("select the operation you want to perform: ")
 
-switch = input("1. addition\n2. subtraction\n3. multiplication\n4. division\n")
-if switch == '1':
+while True:
+  print("select the operation you want to perform: ")
+  switch = input("1. addition\n2. subtraction\n3. multiplication\n4. division\n5. exit\n")
+
+  if switch == '5':
+    print("exiting the calculator...")
+    break
+
+  num1 = int(input("enter the first number: "))
+  num2 = int(input("enter the second number: "))
+
+  if switch == '1':
     print(add(num1, num2))
-elif switch == '2':
+  elif switch == '2':
     print(subtract(num1, num2))
-elif switch == '3':
+  elif switch == '3':
     print(multiply(num1, num2))
-elif switch == '4':
+  elif switch == '4':
     print(divide(num1, num2))
-else:
+  else:
     print("invalid input")
+  
 
